@@ -3,7 +3,7 @@ name: Save Survey Responses
 on:
   push:
     branches:
-      - main  # 저장소의 기본 브랜치에 푸시될 때 실행됨
+      - main  
 
 jobs:
   save_responses:
