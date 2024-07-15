@@ -59,11 +59,10 @@
         <h1>국내 투자자 투자실태 조사</h1>
         <form id="surveyForm" action="#">
             <label for="gender">1. 성별을 선택해 주세요:</label><br>
-            <select id="gender" name="gender" required>
-                <option value="">선택해 주세요</option>
-                <option value="male">남성</option>
-                <option value="female">여성</option>
-            </select><br><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">남성</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">여성</label><br><br>
 
             <label for="age">2. 연령대를 선택해 주세요:</label><br>
             <select id="age" name="age" required>
@@ -84,14 +83,17 @@
                 <option value="other">기타</option>
             </select><br><br>
 
-            <label for="investment">4. 선호하는 투자 종목을 선택해 주세요:</label><br>
-            <select id="investment" name="investment" multiple required>
-                <option value="stock">국내 주식</option>
-                <option value="foreignStock">해외 주식</option>
-                <option value="fund">펀드</option>
-                <option value="realEstate">부동산</option>
-                <option value="crypto">가상화폐</option>
-            </select><br><br>
+            <label>4. 선호하는 투자 종목을 선택해 주세요 (복수 선택 가능):</label><br>
+            <input type="checkbox" id="stock" name="investment" value="stock">
+            <label for="stock">국내 주식</label><br>
+            <input type="checkbox" id="foreignStock" name="investment" value="foreignStock">
+            <label for="foreignStock">해외 주식</label><br>
+            <input type="checkbox" id="fund" name="investment" value="fund">
+            <label for="fund">펀드</label><br>
+            <input type="checkbox" id="realEstate" name="investment" value="realEstate">
+            <label for="realEstate">부동산</label><br>
+            <input type="checkbox" id="crypto" name="investment" value="crypto">
+            <label for="crypto">가상화폐</label><br><br>
 
             <label for="contact">5. 공모주 무료 지급을 위한 연락처를 입력해 주세요:</label><br>
             <input type="text" id="contact" name="contact" required><br><br>
