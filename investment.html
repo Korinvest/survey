@@ -7,12 +7,17 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
+            width: 90%;
             max-width: 600px;
-            margin: 0 auto;
             background-color: #fff;
             padding: 30px;
             border-radius: 8px;
@@ -30,14 +35,19 @@
             display: block;
             margin-bottom: 8px;
         }
-        select, input[type="text"] {
+        select, input[type="text"], input[type="radio"], input[type="checkbox"] {
             width: 100%;
             padding: 10px;
-            margin: 8px 0;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
             font-size: 16px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+            margin-right: 20px;
         }
         button {
             background-color: #4CAF50;
@@ -48,6 +58,7 @@
             cursor: pointer;
             font-size: 18px;
             margin-top: 20px;
+            float: right;
         }
         button:hover {
             background-color: #45a049;
@@ -83,15 +94,15 @@
                 <option value="other">기타</option>
             </select><br><br>
 
-            <label>4. 선호하는 투자 종목을 선택해 주세요 (복수 선택 가능):</label><br>
+            <label for="investment">4. 선호하는 투자 종목을 선택해 주세요 (복수 선택 가능):</label><br>
             <input type="checkbox" id="stock" name="investment" value="stock">
-            <label for="stock">국내 주식</label><br>
+            <label for="stock">국내 주식</label>
             <input type="checkbox" id="foreignStock" name="investment" value="foreignStock">
-            <label for="foreignStock">해외 주식</label><br>
+            <label for="foreignStock">해외 주식</label>
             <input type="checkbox" id="fund" name="investment" value="fund">
-            <label for="fund">펀드</label><br>
+            <label for="fund">펀드</label>
             <input type="checkbox" id="realEstate" name="investment" value="realEstate">
-            <label for="realEstate">부동산</label><br>
+            <label for="realEstate">부동산</label>
             <input type="checkbox" id="crypto" name="investment" value="crypto">
             <label for="crypto">가상화폐</label><br><br>
 
