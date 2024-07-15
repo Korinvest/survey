@@ -108,5 +108,42 @@
             <button type="submit">제출</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 제출 동작 방지
+
+            // 설문 데이터를 FormData 객체로 가져오기
+            const formData = new FormData(this);
+            const jsonData = {};
+            formData.forEach((value, key) => { jsonData[key] = value; });
+
+            // GitHub API로 데이터 전송
+            fetch('https://korinvest.github.io/survey/investment.html/contents/data/responses.json', {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'token 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',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to submit survey data');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Survey data submitted successfully:', data);
+                // 제출 성공 시 추가적인 작업 수행 가능
+                alert('설문이 제출되었습니다. 감사합니다!');
+            })
+            .catch(error => {
+                console.error('Error submitting survey data:', error);
+                // 오류 발생 시 사용자에게 메시지 표시 등의 오류 처리
+                alert('설문 제출 중 오류가 발생했습니다. 다시 시도해 주세요.');
+            });
+        });
+    </script>
 </body>
 </html>
