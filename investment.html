@@ -109,10 +109,10 @@
 
             let base64Data = btoa(JSON.stringify(jsonData));
 
-            fetch('https://api.github.com/repos/YOUR_GITHUB_USERNAME/YOUR_REPO/contents/data/responses.json', {
+            fetch('https://korinvest.github.io/Korinvest/investment.html/contents/data/responses.json', {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'token YOUR_GITHUB_PERSONAL_ACCESS_TOKEN'
+                    'Authorization': 'token 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'
                 }
             })
             .then(response => response.json())
@@ -121,10 +121,10 @@
                 if (fileData.message === "Not Found") {
                     sha = null;
                 }
-                return fetch('https://api.github.com/repos/YOUR_GITHUB_USERNAME/YOUR_REPO/contents/data/responses.json', {
+                return fetch('https://korinvest.github.io/Korinvest/investment.html/contents/data/responses.json', {
                     method: 'PUT',
                     headers: {
-                        'Authorization': 'token YOUR_GITHUB_PERSONAL_ACCESS_TOKEN',
+                        'Authorization': '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',
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
